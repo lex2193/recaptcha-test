@@ -1,0 +1,25 @@
+<html>
+
+<head>
+  <title>Recaptcha Test</title>
+  <script src="https://recaptcha.net/recaptcha/api.js"></script>
+</head>
+
+<body style="margin: 2em;">
+
+  <form method="POST" action="check">
+    <span id="status"></span>
+    <div id="recaptcha"></div>
+    <button type="submit">Submit</button>
+  </form>
+  <script>
+    grecaptcha.ready(() => grecaptcha.render('recaptcha', {
+      sitekey: '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI'
+    }));
+    if (location.hash)
+      document.getElementById('status').innerText = 'Status:' + location.hash.substr(1);
+  </script>
+
+</body>
+
+</html>
